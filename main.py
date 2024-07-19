@@ -52,7 +52,7 @@ def login():
         if account:
             # Create session data, we can access this data in other routes
             session['loggedin'] = True
-            session['id'] = account['id']
+           # session['id'] = account['id']
             session['username'] = account['username']
 
             # Redirect to home page
@@ -74,9 +74,9 @@ def Logout():
         return render_template('Login.html')
 
 
-
 # http://localhost:5000/pythinlogin/register - this will be the registration page, we need to use both GET and POST requests
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/Register.html', methods=['GET', 'POST'])
+#@app.route('/', methods=['GET', 'POST'])
 def register():
     # Output message if something goes wrong...
     msg = ''
@@ -113,6 +113,7 @@ def register():
         cursor.execute('INSERT INTO accounts VALUES (NULL, %s, %s, %s)', (username, password, email,))
         mysql.connection.commit()
         msg = 'You have successfully registered!'
+
 
 if __name__ == '__main__':
     app.run(debug=True)
