@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+       <style>
+        .btns{
+        font-family:arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
+            gap: 2rem;
+            border:none;
+
+
+        }
+
+        .btns > a {
+        text-decoration:none;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            width: 12rem;
+            padding: 1rem 2rem;
+            background-color: #6c63ff;
+            border-radius: .4rem;
+            color:#fff;
+            font-weight:500;
+            border: none;
+            transition: all 400ms ease;
+
+
+        }
+        .btns > a:hover{
+            background-color: #fff;
+            transform: scale(1.06);
+            border: 1px solid #6c63ff;
+            color: #6c63ff;
+
+        }
+        .btns .log_out{
+            background-color: #fdc938;
+        }
+        .btns a>button{
+            font-size:1rem;
+            color:#fff
+            border:none;
+            background:none;
+            padding: none;
+
+        }
+              #msg2.inactive2{
+        display :none;
+        }
+
+        #msg2.active{
+        display:flex;
+        font-size:1.5rem;
+        background:#f8edeb;
+        padding:1rem 2rem;
+border-radius:.4rem;
+position:absolute;
+top:44%;
+right:8%;
+
+        }
+
+        #msg.inactive{
+        display :none;
+        }
+
+        #msg.active{
+        display:flex;
+        font-size:1.5rem;
+        background:#f8edeb;
+        padding:1rem 2rem;
+border-radius:.4rem;
+position:absolute;
+top:32%;
+right:2%;
+
+        }
+    </style>
+  </head>
+  <body>
+<!--
+  <a href="Generate_Certificate">
+      <input type="button" value="Generate_Certificate">
+  </a>
+
+  <a href="Send_Email">
+      <input type="button" value="Send_Email">
+  </a>
+-->
+<div class="btns">
+
+    <h1 href="#" id="msg"class="inactive " style="color:#fec5bb" > Certificate Generated Successfully !!</h1>
+    <h1 href="#" id="msg2"class="inactive2 " style="color:#fec5bb" > Certificate Sent Successfully !!</h1>
+   <a href="Generate_Certificate" onclick="pop()">
+
+            Generate Certificate
+
+  </a>
+
+      <a href="Send_Email" onclick="pop2()" >
+          Send Certificate
+  </a>
+
+      <a href="Logout" class="log_out">
+          Log Out
+  </a>
+
+
+    </div>
+  <script>
+      function pop(){
+    var element = document.getElementById('msg')
+    element.classList.add('active')
+      }
+
+          function pop2(){
+    var element = document.getElementById('msg2')
+    element.classList.add('active')
+      }
+  </script>
+  </body>
+</html>
